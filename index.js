@@ -8,6 +8,7 @@ const mongoose = require("mongoose");
 // load routes
 const userRoute = require("./routes/user");
 const authRoute = require("./routes/auth");
+const postRoute = require("./routes/post");
 
 //load config
 dotenv.config({ path: "./config/config.env" });
@@ -32,6 +33,8 @@ app.use(morgan("common"));
 // routes
 app.use("/api/user", userRoute);
 app.use("/api/auth", authRoute);
+app.use("/api/post", postRoute);
+
 
 // run server
 const port = process.env.PORT || 8800;
