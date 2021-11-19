@@ -3,7 +3,6 @@ const dotenv = require("dotenv");
 const helmet = require("helmet");
 const morgan = require("morgan");
 const connectDB = require("./config/db");
-const mongoose = require("mongoose");
 
 // load routes
 const userRoute = require("./routes/user");
@@ -15,6 +14,9 @@ dotenv.config({ path: "./config/config.env" });
 
 // init server
 const app = express();
+
+// connect to db
+connectDB();
 
 // middleware
 app.use(express.json());
